@@ -55,5 +55,5 @@ def drop_tables():
     CONN.commit()
 
 # drop_tables()
-create_tables()
+# create_tables()
 

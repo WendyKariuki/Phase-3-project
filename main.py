@@ -38,7 +38,7 @@ def event_operations():
        print("4.Get all events")
        print("5.Count all events")
        print("6.Delete an event")
-       print("8.Return to main menu")
+       print("7.Return to main menu")
 
        choice = input("\nEnter your choice: ")
 
@@ -87,7 +87,7 @@ def event_operations():
             print(f"Event with id {event_id} deleted successfully")
 
         #return to main menu
-       elif choice == "8":
+       elif choice == "7":
             return main_menu()
        
         #error if input is not valid(number not in 1-8)
@@ -121,13 +121,23 @@ def participant_operations():
             print(f"Participant with id {new_participant_id} added successfully")
 
         #update participant
+        # elif choice == "2":
+        #     participant_id = input("Enter the id of the participant you want to update: ")
+        #     name = input("Enter new name: ")
+        #     email = input("Enter new email: ")
+        #     event_id = input("Enter new event id: ")
+
+        #     participantId = participant.update(name, email, event_id)
+        #     print(f"Participant with id {participant_id} updated successfully")
         elif choice == "2":
             participant_id = input("Enter the id of the participant you want to update: ")
             name = input("Enter new name: ")
             email = input("Enter new email: ")
+            event_id = input("Enter new event id: ")
 
-            updated_participant = participant.update(id, name, email)
-            print(f"Participant with id {participant_id} updated successfully")
+            participant = Participant()
+            participantId = participant.update(participant_id, name, email, event_id)
+            print(f"Participant with id {participantId} updated successfully")
 
         #get a participant by id
         elif choice == "3":
@@ -158,6 +168,14 @@ def participant_operations():
             participant_id = input("Enter the id of the participant you want to delete: ")
             participant.delete(participant_id)
             print(f"Participant with id {participant_id} deleted successfully")
+        
+        #return to main menu
+        elif choice == "8":
+                return main_menu()
+        
+        #error if input is not valid(number not in 1-8)
+        else:
+                print("Invalid Input")
 
  # menu-driven interface for performing various operations on tickets.       
 def tickets_operations():
@@ -195,7 +213,7 @@ def tickets_operations():
             participant_id = input("Enter new participant id: ")
             event_id = input("Enter new event id: ")
 
-            ticket.update_ticket_by_id(ticket_id, ticket_number, price, participant_id, event_id)
+            ticket.update(ticket_id, ticket_number, price, participant_id, event_id)
             print(f"Ticket with id {ticket_id} updated successfully")
 
         #get a ticket by id
@@ -220,8 +238,9 @@ def tickets_operations():
         elif choice == "6":
             all_tickets = ticket.get_all_tickets()
             print("\nAll tickets")
-            print(all_tickets)
-
+            for ticket in all_tickets:
+                print(ticket)
+            
         #count all tickets
         elif choice == "7":
             ticket_count = ticket.count_tickets()
@@ -230,7 +249,7 @@ def tickets_operations():
         #delete a ticket
         elif choice == "8":
             ticket_id = input("Enter the id of the ticket you want to delete: ")
-            ticket.delete_ticket_by_id(ticket_id)
+            ticket.delete(ticket_id)
             print(f"Ticket with id {ticket_id} deleted successfully")
 
         #return to main menu

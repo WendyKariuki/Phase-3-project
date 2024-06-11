@@ -14,16 +14,11 @@ class Ticket:
     #update an ticket
     @classmethod
     def update(cls, id, ticket_number, price, participant_id, event_id):
-        sql = """UPDATE tickets SET ticket_number=?, price=?, participant_id=?, event_id=?, WHERE id=?"""
-        CURSOR.execute(sql, (id, ticket_number, price, participant_id, event_id))
+        sql = """
+        UPDATE tickets SET ticket_number=?, price=?, participant_id=?, event_id=? WHERE id=?"""
+        CURSOR.execute(sql, (ticket_number, price, participant_id, event_id, id))
         CONN.commit()
 
-    #delete an ticket  
-    @classmethod
-    def delete(cls, id):
-        sql = """DELETE FROM tickets WHERE id=?"""
-        CURSOR.execute(sql, (id,))
-        CONN.commit()
 
     # get_ticket by id
     @classmethod
@@ -60,16 +55,24 @@ class Ticket:
         CURSOR.execute(sql)
         return CURSOR.fetchone()
     
+    #delete an ticket  
+    @classmethod
+    def delete(cls, id):
+        sql = """DELETE FROM tickets WHERE id=?"""
+        CURSOR.execute(sql, (id,))
+        CONN.commit()
+
+    
 #insert a table
-ticket1 = Ticket.insert('1', '1000' ,1, 1)
-ticket2 = Ticket.insert('2', '1500' ,1, 2)
-ticket3 = Ticket.insert('3', '2000' ,2, 3)
-ticket4 = Ticket.insert('4', '2500' ,1, 4)
-ticket5 = Ticket.insert('5', '3000' ,1, 5)
-ticket6 = Ticket.insert('6', '3500' ,1, 6)
-ticket7 = Ticket.insert('7', '4000' ,1, 7)
-ticket8 = Ticket.insert('8', '4500' ,1, 8)
-ticket9 = Ticket.insert('9', '5000' ,1, 9)
+# ticket1 = Ticket.insert('1', '1000' ,1, 1)
+# ticket2 = Ticket.insert('2', '1500' ,1, 2)
+# ticket3 = Ticket.insert('3', '2000' ,2, 3)
+# ticket4 = Ticket.insert('4', '2500' ,1, 4)
+# ticket5 = Ticket.insert('5', '3000' ,1, 5)
+# ticket6 = Ticket.insert('6', '3500' ,1, 6)
+# ticket7 = Ticket.insert('7', '4000' ,1, 7)
+# ticket8 = Ticket.insert('8', '4500' ,1, 8)
+# ticket9 = Ticket.insert('9', '5000' ,1, 9)
 
 
 #update an ticket

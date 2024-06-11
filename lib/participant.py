@@ -14,9 +14,10 @@ class Participant:
     #update an participant
     @classmethod
     def update(cls, id, name, email, event_id):
-        sql = """UPDATE participants SET name=?, email=? WHERE id=?"""
-        CURSOR.execute(sql, (id, name, email, event_id))
+        sql = """UPDATE participants SET name=?, email=?, event_id=? WHERE id=?"""
+        CURSOR.execute(sql, (name, email, event_id, id))
         CONN.commit()
+        return id
 
     # get_participant by id
     @classmethod
@@ -54,16 +55,16 @@ class Participant:
         CONN.commit()
     
 #insert a table
-participant1 = Participant.insert('Wendy Kariuki', 'wendykariuki@gmail.com' , 1)
-participant2 = Participant.insert('John Doe', 'johndoe@gmail.com' , 2)
-participant3 = Participant.insert('Jane Doe', 'janedoe@gmail.com' , 3)
-participant4 = Participant.insert('Sir Henry', 'sirhenry@gmail.com' , 4)
-participant5 = Participant.insert('Ferdinand Porscher', 'ferdinandporscher@gmail.com' , 5)
-participant6 = Participant.insert('Mark Zucherberg', 'markzucherberg@gmail.com' , 6)
-participant7 = Participant.insert('Mark Zucherberg', 'markzucherberg@gmail.com' , 6)
-participant8 = Participant.insert('Mark Zucherberg', 'markzucherberg@gmail.com' , 6)
-participant9 = Participant.insert('Mark Zucherberg', 'markzucherberg@gmail.com' , 6)
-participant10 = Participant.insert('Mark Zucherberg', 'markzucherberg@gmail.com' , 6)
+# participant1 = Participant.insert('Wendy Kariuki', 'wendykariuki@gmail.com' , 1)
+# participant2 = Participant.insert('John Doe', 'johndoe@gmail.com' , 2)
+# participant3 = Participant.insert('Jane Doe', 'janedoe@gmail.com' , 3)
+# participant4 = Participant.insert('Sir Henry', 'sirhenry@gmail.com' , 4)
+# participant5 = Participant.insert('Ferdinand Porscher', 'ferdinandporscher@gmail.com' , 5)
+# participant6 = Participant.insert('Mark Zucherberg', 'markzucherberg@gmail.com' , 6)
+# participant7 = Participant.insert('Mark Zucherberg', 'markzucherberg@gmail.com' , 7)
+# participant8 = Participant.insert('Mark Zucherberg', 'markzucherberg@gmail.com' , 8)
+# participant9 = Participant.insert('Mark Zucherberg', 'markzucherberg@gmail.com' , 9)
+# participant10 = Participant.insert('Mark Zucherberg', 'markzucherberg@gmail.com' , 10)
 
 
 #update an participant

@@ -17,7 +17,6 @@ class Event:
         sql = """UPDATE events SET name=?, location=?, date=? WHERE id=?"""
         CURSOR.execute(sql, (name, location, date, id))
         CONN.commit()
-        event_id = CURSOR.lastrowid
         CURSOR.execute("SELECT * FROM events WHERE id = ?", (id, ))
         return CURSOR.fetchone()
 
@@ -51,16 +50,16 @@ class Event:
 
     
 #insert a table
-event1 = Event.insert('Octoberfest', 'uhuru gardene', '2024-10-10')
-event2 = Event.insert('Halloween', 'mombasa', '2024-9-10')
-event3 = Event.insert('Christmas', 'nairobi', '2024-12-12')
-event4 = Event.insert('Easter', 'kisumu', '2024-4-10')
-event5 = Event.insert('New Year', 'nairobi', '2024-1-1')
-event6 = Event.insert('sip and code', 'nairobi', '2024-28-06')
-event7 = Event.insert('New Year', 'nairobi', '2024-1-1')
-event8 = Event.insert('New Year', 'nairobi', '2024-1-1')
-event9 = Event.insert('New Year', 'nairobi', '2024-1-1')
-event10 = Event.insert('New Year', 'nairobi', '2024-1-1')
+# event1 = Event.insert('Octoberfest', 'uhuru gardene', '2024-10-10')
+# event2 = Event.insert('Halloween', 'mombasa', '2024-9-10')
+# event3 = Event.insert('Christmas', 'nairobi', '2024-12-12')
+# event4 = Event.insert('Easter', 'kisumu', '2024-4-10')
+# event5 = Event.insert('New Year', 'nairobi', '2024-1-1')
+# event6 = Event.insert('sip and code', 'nairobi', '2024-28-06')
+# event7 = Event.insert('New Year', 'nairobi', '2024-1-1')
+# event8 = Event.insert('New Year', 'nairobi', '2024-1-1')
+# event9 = Event.insert('New Year', 'nairobi', '2024-1-1')
+# event10 = Event.insert('New Year', 'nairobi', '2024-1-1')
 
 #update an event
 # Event.update(6, 'Career Fair', 'Diamond plaza', '2024-09-12')
