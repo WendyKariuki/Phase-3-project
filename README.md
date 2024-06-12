@@ -104,4 +104,5 @@ This project is licensed under the MIT License.
 - [Wendy](https://github.com/WendyKariuki/Phase-3-project.git)
 
 ## Version
+
 - 1.0.0
