@@ -1,33 +1,31 @@
-# Store Management CLI App
+# Event Management CLI App
 
-This is a command-line interface (CLI) application written in Python for managing stores, products, and categories. It allows users to create and manage stores, add and update products, assign categories to products, and perform various other operations.
+This is a command-line interface (CLI) application written in Python for managing events, participants, and tickets. It allows users to create and manage events, add and update participants, assign tickets to participants and perform various other operations.
 
 ## Features
 
-- Create a new store
-- Update an existing store
-- Fetch store details by ID
-- Delete a store
-- Add a product to a store
-- Delete a product from a store
-- Update a product (name, price, category, description)
-- Count the number of products in a store
-- Add a category to a product
-- Add a description to a product
-- Delete a category
-- View all products
-- Fetch products by category
-- Fetch products by store
-- Delete a product
-- Fetch all products
-- Fetch all stores
-- Fetch all categories
-- Update a category
-- Update a product name
-- Update a product price
-- Update a product description
-- Fetch all product details by product ID
-- Fetch all products in a store by store ID
+- Create a new event
+- Update an existing event
+- Get event details by ID
+- Get all events
+- Count the number of events
+- Delete an event
+- Add a participant to an event
+- Update a participant
+- Get participant by ID.
+- Get participant by event ID
+- Get all participants
+- Count all participants
+- Delete a participoant
+- Add a ticket
+- Update a ticket
+- Get ticket by ID
+- Get ticket by participant ID
+- Get ticket by event ID
+- Get all tickets
+- Count Tickets
+- Delete tickets
+
 
 ## Prerequisites
 
@@ -38,11 +36,11 @@ This is a command-line interface (CLI) application written in Python for managin
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/spookeyy/store_mgt_CLI_app.git
+git clone https://github.com/WendyKariuki/Phase-3-project
 ```
 2. Navigate to the cloned directory:
 ```bash
-cd store-mgt-CLI-app
+cd Phase-3-project
 ```
 3. (Optional) Create a virtual environment and activate it:
 ```bash
@@ -56,26 +54,25 @@ python3 main.py
 
 ## Project Structure
 
-- store_mgt_CLI_app
-    - data/
-        - database.db
+- Phase-3-project     
     - lib/
-        - category.py
         - config.py
-        - description.py
-        - product.py
-        - store.py
+        - event.py
+        - participant.py
+        - tickets.py
+    - data.db
+    - LICENSE
     - main.py
     - README.md
     - readonly.py
 
-- `data/database.db`: SQLite database file
+- `data.db`: SQLite database file
 - `lib/config.py`: Database configuration and table creation/deletion
-- `lib/store.py`: Functions for managing stores
-- `lib/product.py`: Functions for managing products
-- `lib/category.py`: Functions for managing categories
-- `lib/description.py`: Functions for managing product descriptions
+- `lib/event.py`: Functions for managing events
+- `lib/participant.py`: Functions for managing participants
+- `lib/tickets.py`: Functions for managing tickets
 - `main.py`: Entry point of the application
+- `LICENSE` : This project is licensed under the MIT License. By using this software, you agree to the terms outlined in the license.
 - `README.md`: Project README
 
 ## Dependencies
@@ -85,7 +82,7 @@ python3 main.py
 
 ## Configuration
 
-- Database: `data/database.db`
+- Database: `data.db`
 - Cursor: `CURSOR`
 
 ## Running the Application
@@ -104,7 +101,7 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 This project is licensed under the MIT License.
 
 ## Author
-- [Spookie](https://github.com/spookeyy)
+- [Wendy](https://github.com/WendyKariuki/Phase-3-project)
 
 ## Version
 - 1.0.0

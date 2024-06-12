@@ -6,7 +6,7 @@ import sys
 # menu-driven interface for performing various operations(main menu)
 def main_menu():
     while True:
-        print("--------------MAIN MENU--------------")
+        print("============MAIN MENU===============") 
         print("1. Manage events") 
         print("2. Manage participants")
         print("3. Manage tickets")
@@ -31,7 +31,7 @@ def main_menu():
 # menu-driven interface for performing various event operations
 def event_operations():
    while True:
-       print("------------EVENT OPERATIONS----------------")
+       print("============EVENT OPERATIONS============")
        print("1.Add an event")
        print("2.Update an event")
        print("3.Get an event by id")
@@ -97,7 +97,7 @@ def event_operations():
 # menu-driven interface for performing various operations on participants.
 def participant_operations(): 
     while True:
-        print("------------PARTICIPANT OPERATIONS----------------")
+        print("============PARTICIPANT OPERATIONS============")
         print("1.Add a participant")
         print("2.Update a participant")
         print("3.Get a participant by id")
@@ -120,15 +120,6 @@ def participant_operations():
             new_participant_id = participant.insert(name, email, event_id)
             print(f"Participant with id {new_participant_id} added successfully")
 
-        #update participant
-        # elif choice == "2":
-        #     participant_id = input("Enter the id of the participant you want to update: ")
-        #     name = input("Enter new name: ")
-        #     email = input("Enter new email: ")
-        #     event_id = input("Enter new event id: ")
-
-        #     participantId = participant.update(name, email, event_id)
-        #     print(f"Participant with id {participant_id} updated successfully")
         elif choice == "2":
             participant_id = input("Enter the id of the participant you want to update: ")
             name = input("Enter new name: ")
@@ -180,7 +171,7 @@ def participant_operations():
  # menu-driven interface for performing various operations on tickets.       
 def tickets_operations():
     while True:
-        print("------------TICKET OPERATIONS----------------")
+        print("============TICKET OPERATIONS============")
         print("1.Add a ticket")
         print("2.Update a ticket")
         print("3.Get a ticket by id")
