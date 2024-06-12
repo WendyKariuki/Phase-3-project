@@ -6,7 +6,7 @@ import sys
 # menu-driven interface for performing various operations(main menu)
 def main_menu():
     while True:
-        print("============MAIN MENU===============") 
+        print("\n============MAIN MENU===============\n") 
         print("1. Manage events") 
         print("2. Manage participants")
         print("3. Manage tickets")
@@ -31,7 +31,7 @@ def main_menu():
 # menu-driven interface for performing various event operations
 def event_operations():
    while True:
-       print("============EVENT OPERATIONS============")
+       print("\n============EVENT OPERATIONS============\n")
        print("1.Add an event")
        print("2.Update an event")
        print("3.Get an event by id")
@@ -83,8 +83,13 @@ def event_operations():
         #delete an event
        elif choice == "6":
             event_id = input("Enter the id of the event you want to delete: ")
-            event.delete(event_id)
-            print(f"Event with id {event_id} deleted successfully")
+            confirm = input("Are you sure you want to delete this event? (y/n): ")
+            if confirm == "y":
+                event.delete(event_id)
+                print(f"\n Event with id {event_id} deleted successfully")
+            elif confirm == "n":
+                print("\n Event not deleted")
+            
 
         #return to main menu
        elif choice == "7":
@@ -97,7 +102,7 @@ def event_operations():
 # menu-driven interface for performing various operations on participants.
 def participant_operations(): 
     while True:
-        print("============PARTICIPANT OPERATIONS============")
+        print("\n============PARTICIPANT OPERATIONS==============\n")
         print("1.Add a participant")
         print("2.Update a participant")
         print("3.Get a participant by id")
@@ -157,9 +162,13 @@ def participant_operations():
         #delete a participant
         elif choice == "7":
             participant_id = input("Enter the id of the participant you want to delete: ")
-            participant.delete(participant_id)
-            print(f"Participant with id {participant_id} deleted successfully")
-        
+            confirm = input("Are you sure you want to delete this participant? (y/n): ")
+            if confirm == "y":
+                participant.delete(participant_id)
+                print(f"\n Participant with id {participant_id} deleted successfully")
+            elif confirm == "n":
+                print("\n participant not deleted")
+   
         #return to main menu
         elif choice == "8":
                 return main_menu()
@@ -171,7 +180,7 @@ def participant_operations():
  # menu-driven interface for performing various operations on tickets.       
 def tickets_operations():
     while True:
-        print("============TICKET OPERATIONS============")
+        print("\n============TICKET OPERATIONS============\n")
         print("1.Add a ticket")
         print("2.Update a ticket")
         print("3.Get a ticket by id")
@@ -240,8 +249,12 @@ def tickets_operations():
         #delete a ticket
         elif choice == "8":
             ticket_id = input("Enter the id of the ticket you want to delete: ")
-            ticket.delete(ticket_id)
-            print(f"Ticket with id {ticket_id} deleted successfully")
+            confirm = input("Are you sure you want to delete this ticket? (y/n): ")
+            if confirm == "y":
+                ticket.delete(ticket_id)
+                print(f"\n Ticket with id {ticket_id} deleted successfully")
+            elif confirm == "n":
+                print("\n Ticket not deleted")
 
         #return to main menu
         elif choice == "9":
