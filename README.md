@@ -36,7 +36,7 @@ This is a command-line interface (CLI) application written in Python for managin
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/WendyKariuki/Phase-3-project
+git clone https://github.com/WendyKariuki/Phase-3-project.git
 ```
 2. Navigate to the cloned directory:
 ```bash
@@ -101,7 +101,7 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 This project is licensed under the MIT License.
 
 ## Author
-- [Wendy](https://github.com/WendyKariuki/Phase-3-project)
+- [Wendy](https://github.com/WendyKariuki/Phase-3-project.git)
 
 ## Version
 - 1.0.0
